@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Bilal Abdul, software engineer working on backend systems and AI: .NET, Go, Python, LangGraph and MCP.">
+<title>Bilal Abdul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+html{color-scheme:light dark}body{margin:0}img{max-width:100%}
+:root{
+  --bg:#f6f7f8; --surface:#ffffff; --ink:#15191f; --muted:#5d6672; --line:#dfe3e8; --accent:#2f5bd3; --accent-soft:#e8eefc;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f1216;--surface:#161a20;--ink:#e7eaee;--muted:#98a2ae;--line:#262c34;--accent:#8aa8ff;--accent-soft:#1b2440;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1216;--surface:#161a20;--ink:#e7eaee;--muted:#98a2ae;--line:#262c34;--accent:#8aa8ff;--accent-soft:#1b2440;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:44rem;margin:0 auto;padding-inline:20px;padding-block:72px 96px;display:flex;flex-direction:column;gap:72px}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;transition:text-decoration-color .15s}
+a:hover{text-decoration-color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.label{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono)}
+header{display:flex;flex-direction:column;gap:20px}
+header h1{font-size:clamp(2.4rem,7vw,3.4rem);line-height:1.05}
+.role{font-size:1.15rem;color:var(--muted);max-width:34rem}
+.role strong{color:var(--ink);font-weight:500}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.95rem}
+.status{display:inline-flex;align-items:center;gap:8px;font:400 13px/1 var(--mono);color:var(--muted)}
+.dot{width:7px;height:7px;border-radius:50%;background:#2fa36b}
+section{display:flex;flex-direction:column;gap:24px}
+section > h2{font-size:.8rem;font-family:var(--mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.work{display:flex;flex-direction:column}
+.item{display:flex;flex-direction:column;gap:12px;padding-block:28px;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
+.item h3{font-size:1.4rem}
+.meta{font:400 13px/1.4 var(--mono);color:var(--muted)}
+.item p{color:var(--muted);max-width:40rem}
+.item p strong{color:var(--ink);font-weight:500}
+.trace{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font:400 12.5px/1.6 var(--mono);color:var(--muted);white-space:nowrap}
+.trace b{color:var(--accent);font-weight:500}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:16px}
+.fact{display:flex;flex-direction:column;gap:2px}
+.fact .n{font:600 1.35rem/1.2 var(--display);font-variant-numeric:tabular-nums}
+.fact .t{font-size:.85rem;color:var(--muted);line-height:1.4}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:400 12px/1 var(--mono);padding:6px 8px;border-radius:5px;background:var(--accent-soft);color:var(--ink)}
+.item-links{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem}
+.exp{display:grid;grid-template-columns:8.5rem 1fr;gap:6px 24px}
+.exp .when{font:400 13px/1.7 var(--mono);color:var(--muted)}
+.exp .what{min-width:0}
+.exp .what strong{font-weight:500}
+.exp .what span{color:var(--muted)}
+@media (max-width:560px){.exp{grid-template-columns:1fr;gap:2px}.exp .what{margin-bottom:14px}}
+.plist{display:flex;flex-direction:column}
+.prow{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding-block:16px;border-top:1px solid var(--line)}
+.prow:last-child{border-bottom:1px solid var(--line)}
+.prow .name{font-weight:500}
+.prow .desc{grid-column:1/-1;color:var(--muted);font-size:.95rem;min-width:0}
+.prow .stack{font:400 12.5px/1.5 var(--mono);color:var(--muted);text-align:right}
+@media (max-width:560px){.prow{grid-template-columns:1fr}.prow .stack{text-align:left}}
+.skills{display:grid;grid-template-columns:8.5rem 1fr;gap:10px 24px;font-size:.95rem}
+.skills dt{font:400 13px/1.7 var(--mono);color:var(--muted)}
+.skills dd{margin:0;min-width:0}
+@media (max-width:560px){.skills{grid-template-columns:1fr;gap:0}.skills dd{margin-bottom:12px}}
+.contact{display:flex;flex-direction:column;gap:16px}
+.contact p{color:var(--muted);max-width:34rem}
+.email{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.email code{font:500 1.05rem/1.4 var(--mono);color:var(--ink);user-select:all;word-break:break-all}
+button{font:500 13px/1 var(--mono);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+footer{font:400 12.5px/1.5 var(--mono);color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <span class="status"><span class="dot" aria-hidden="true"></span>Karachi, Pakistan · works remotely</span>
+    <h1>Bilal Abdul</h1>
+    <p class="role">Software engineer working on <strong>backend systems and AI</strong>. I build .NET, Go and Python services, and the LLM agents that run on top of them.</p>
+    <nav class="links" aria-label="Profiles">
+      <a href="https://github.com/bilalabsh">GitHub</a>
+      <a href="https://www.linkedin.com/in/bilalabdul/">LinkedIn</a>
+      <a href="#contact">Email</a>
+    </nav>
+  </header>
+
+  <section aria-labelledby="exp-h">
+    <h2 id="exp-h">Experience</h2>
+    <div class="exp">
+      <span class="when">2025 – now</span>
+      <div class="what"><strong>Software Engineer, Folio3</strong><br><span>Backend and AI on Burq, an integration platform (iPaaS) on .NET 8, plus the Agentic Burq assistant. Earlier: .NET APIs and React dashboards for a livestock management system, and the iOS frontend of an enterprise campus app. CBOT Champion 2026, voted by colleagues company-wide.</span></div>
+      <span class="when">2024 – 2025</span>
+      <div class="what"><strong>Software Developer</strong><br><span>Full-stack and mobile apps for clients with React, React Native, SwiftUI and .NET, including SwiftUI features and subscriptions for a tinnitus treatment app.</span></div>
+      <span class="when">2021 – 2025</span>
+      <div class="what"><strong>BS Computer Science, FAST NUCES</strong><br><span>Final year project: iParhai, an AI-based adaptive learning platform for web and mobile.</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="work-h">
+    <h2 id="work-h">Selected work</h2>
+    <div class="work">
+
+      <article class="item">
+        <div class="item-head">
+          <h3>WalkerBook</h3>
+          <span class="meta">AI publishing platform · live since May 2026</span>
+        </div>
+        <p>Turns a chat conversation into a full-length, formatted book. A user describes the book, the system plans it, writes a preview, then generates the whole manuscript and exports it as <strong>PDF and DOCX</strong>.</p>
+        <div class="trace" role="img" aria-label="Pipeline: chat, intake agent, outline agent, preview agent, payment, chapter agents, PDF and DOCX export, coordinated by a supervisor agent">chat → <b>intake</b> → <b>outline</b> → <b>preview</b> → payment → <b>chapters</b> ×n → pdf / docx &nbsp;·&nbsp; supervisor coordinates · sync-state keeps chapter summaries</div>
+        <p>I worked across the stack: the <strong>LangGraph multi-agent pipeline</strong> with chapter-quality evaluation and LangSmith tracing, Next.js and TypeScript features, and the Go backend with a PostgreSQL schema and a worker for <strong>30-minute generation jobs</strong> with progress tracking and retries.</p>
+        <div class="tags"><span class="tag">LangGraph</span><span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Go</span><span class="tag">PostgreSQL</span></div>
+        <div class="item-links">
+          <a href="https://github.com/bilalabsh/ai-publishing-engine">AI service and web app ↗</a>
+          <a href="https://github.com/walkerbooks/ai-publishing-backend/tree/prod">Go backend ↗</a>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <h3>Agentic Burq</h3>
+          <span class="meta">Folio3 · company code, not public</span>
+        </div>
+        <p>An AI assistant for an integration platform that connects stores like Shopify and Amazon to ERPs like NetSuite and Dynamics 365. Users build, edit, run and fix live integrations in plain English, and <strong>nothing changes until they approve the plan</strong>.</p>
+        <div class="facts">
+          <div class="fact"><span class="n">~57</span><span class="t">platform tools on an MCP server, each with its own permissions</span></div>
+          <div class="fact"><span class="n">0.5 s</span><span class="t">per request for the classifier that handles simple asks</span></div>
+          <div class="fact"><span class="n">$0.00007</span><span class="t">cost per classifier check</span></div>
+        </div>
+        <p>A supervisor agent routes work to specialists for lookups, building integrations and self-healing diagnostics. It works with any LLM provider, tests AI-drafted integrations against the live engine before approval, and traces everything in Langfuse.</p>
+        <div class="tags"><span class="tag">Claude Agent SDK</span><span class="tag">MCP</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">.NET 8</span><span class="tag">Langfuse</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section aria-labelledby="proj-h">
+    <h2 id="proj-h">More projects</h2>
+    <div class="plist">
+      <div class="prow"><a class="name" href="https://github.com/bilalabsh/Study-Snap">Study Snap ↗</a><span class="stack">LangChain · Chroma · OpenAI</span><p class="desc">Chat with your PDFs. Retrieves the right passages and answers from your own documents, with memory for follow-ups.</p></div>
+      <div class="prow"><a class="name" href="https://github.com/bilalabsh/Answer_Sheet_Validation">Answer Sheet Validation ↗</a><span class="stack">Llama 3.2 Vision · OpenCV</span><p class="desc">Reads handwritten answer sheets and grades each answer against the teacher's marking scheme.</p></div>
+      <div class="prow"><a class="name" href="https://github.com/bilalabsh/Iparhai_RS">iParhai Recommendation Service ↗</a><span class="stack">FastAPI · MongoDB · scikit-learn</span><p class="desc">Finds the topics a student is weakest in and recommends what to practise next.</p></div>
+      <div class="prow"><a class="name" href="https://github.com/bilalabsh/Coding_Questions_Generator">Coding Questions Generator ↗</a><span class="stack">LangChain · OpenAI</span><p class="desc">Builds a coding test from a plain-English topic and difficulty level.</p></div>
+      <div class="prow"><a class="name" href="https://github.com/bilalabsh/Employee-Management">Employee Management ↗</a><span class="stack">ASP.NET Core · EF Core · SQL Server</span><p class="desc">Layered ASP.NET Core app with a Web API, an MVC front end, Identity and JWT auth.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="skills-h">
+    <h2 id="skills-h">Tools</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>C#, Python, Go, TypeScript, JavaScript, SQL, Swift</dd>
+      <dt>Backend</dt><dd>.NET 8 / ASP.NET Core, FastAPI, Node.js, Go (Chi), REST APIs, SignalR</dd>
+      <dt>AI</dt><dd>LangGraph, LangChain, Claude Agent SDK, MCP, OpenAI, Groq, Langfuse, LangSmith, RAG</dd>
+      <dt>Data &amp; cloud</dt><dd>PostgreSQL, SQL Server, MongoDB, Azure, Docker</dd>
+      <dt>Frontend</dt><dd>Next.js, React, React Native, SwiftUI</dd>
+    </dl>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h" class="label">Contact</h2>
+    <p>I'm open to backend and AI engineering roles, remote or in Karachi. Email is the quickest way to reach me.</p>
+    <div class="email">
+      <code id="email">memonbilal162@gmail.com</code>
+      <button type="button" id="copy">Copy email</button>
+    </div>
+  </section>
+
+  <footer>© 2026 Bilal Abdul</footer>
+</main>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy'), el=document.getElementById('email');
+  btn.addEventListener('click', function(){
+    var text=el.textContent.trim();
+    function selectIt(){ var r=document.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Selected, press Ctrl+C'; }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ btn.textContent='Copied'; setTimeout(function(){btn.textContent='Copy email';},1800); }, selectIt);
+    } else { selectIt(); }
+  });
+})();
+</script>
+</body>
+</html>
